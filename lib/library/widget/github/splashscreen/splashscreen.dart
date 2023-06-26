@@ -149,29 +149,27 @@ class SplashScreenStateful extends State<SplashScreen> {
                   alignment: Alignment.center,
                   child: InkWell(
                     onTap: widget.onClick,
-                    child: SingleChildScrollView(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          //App Logo
-                          Container(
-                            padding: const EdgeInsets.only(bottom: 5.0),
-                            width: widget.photoSize,
-                            height: widget.photoSize,
-                            child: widget.image,
-                          ),
-                          //Title
-                          (widget.title != null) ? FavText(widget.title!, 17, align: TextAlign.center) : const SizedBox(),
-                          //Space
-                          const SizedBox(height: 30),
-                          //Loader
-                          (widget.useLoader) ? _isLoader() : const SizedBox(),
-                          //Space
-                          const SizedBox(height: 10),
-                          //Loader Text
-                          (widget.loadingText == null) ? const SizedBox(height: 0) : Padding(padding: widget.loadingTextPadding, child: FavText(widget.loadingText!, 17, align: TextAlign.center)),
-                        ],
-                      ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        //App Logo
+                        Container(
+                          padding: const EdgeInsets.only(bottom: 5.0),
+                          width: widget.photoSize,
+                          height: widget.photoSize,
+                          child: widget.image,
+                        ),
+                        //Title
+                        (widget.title != null) ? FavText(widget.title!, 17, align: TextAlign.center) : const SizedBox(),
+                        //Space
+                        const SizedBox(height: 30),
+                        //Loader
+                        (widget.useLoader) ? _isLoader() : const SizedBox(),
+                        //Space
+                        const SizedBox(height: 10),
+                        //Loader Text
+                        (widget.loadingText == null) ? const SizedBox(height: 0) : Padding(padding: widget.loadingTextPadding, child: FavText(widget.loadingText!, 17, align: TextAlign.center)),
+                      ],
                     ),
                   ),
                 ),

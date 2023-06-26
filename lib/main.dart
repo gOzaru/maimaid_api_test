@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:maimaid_api_test/splash.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 void main() {
@@ -12,7 +13,6 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      key: Get.key,
       useInheritedMediaQuery: true,
       debugShowCheckedModeBanner: false,
       smartManagement: SmartManagement.full,
@@ -34,6 +34,7 @@ class MainApp extends StatelessWidget {
         ],
         background: Container(color: Colors.white),
       ),
+      home: const Splash(),
     );
   }
 }
