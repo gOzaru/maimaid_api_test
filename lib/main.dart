@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:maimaid_api_test/bloc/message.dart';
 import 'package:maimaid_api_test/splash.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-void main() {
+Future<void> main() async {
+  await start();
   runApp(const MainApp());
+}
+
+Future start() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
+  Get.put(Message());
 }
 
 class MainApp extends StatelessWidget {
